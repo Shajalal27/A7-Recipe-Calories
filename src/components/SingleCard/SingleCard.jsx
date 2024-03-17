@@ -1,5 +1,7 @@
+import PropTypes from 'prop-types';
 
-const SingleCard = () => {
+const SingleCard = ({card}) => {
+    console.log(card);
     return (
         <div>
             
@@ -7,4 +9,7 @@ const SingleCard = () => {
     );
 };
 
+SingleCard.propTypes ={
+    card:PropTypes.object.isRequired
+}
 export default SingleCard;

@@ -23,14 +23,16 @@ function App() {
     });
   }, []);
 
+  
+
   return (
     <>
-     <div className='w-[90%] mx-auto border-2 border-red-500'>
+     <div className='w-[90%] mx-auto'>
         <Header></Header>
         <Main></Main>
      </div>
      <div className='main-container w-[90%] mx-auto gap-8 grid lg:grid-cols-2 grid-cols-1 pb-12'>
-        <div className='recipe-container gap-8 grid lg:grid-cols-2 grid-cols-1 border-2 border-red-600'>
+        <div className='recipe-container gap-8 grid lg:grid-cols-2 grid-cols-1'>
             {cards.map((pd) => (
               <RecipeCard key={pd.id} card ={pd}></RecipeCard>
             ))}

@@ -1,4 +1,7 @@
+import watch from '../../assets/images/watch.png'
+import fire from '../../assets/images/fire.png'
 
+import PropTypes from 'prop-types';
 
 const RecipeCard = ({card}) => {
     return (
@@ -9,15 +12,32 @@ const RecipeCard = ({card}) => {
                 <p className="pt-3 pb-4">{card.short_description}</p>
                 <div>
                     <h3 className="text-xl text-black font-medium">Ingredients: 6</h3>
-                    <ol className="list-disc text-gray-500 ml-8">
-                        <li>550 g chicken</li>
-                        <li>120 ml soy sauce</li>
-                        <li>200 g basil leaf</li>
-                    </ol>
+                    <ul className="list-disc text-gray-500 ml-8">
+                        <li>{card.ingredients}</li>
+                        
+                        
+                    </ul>
+                </div>
+                <div className='flex gap-6 pt-4'>
+                    <div className='flex gap-4'>
+                        <img src={watch} alt="" />
+                        <p>{card.preparing_time}</p>
+                    </div>
+                    <div className='flex gap-4'>
+                        <img src={fire} alt="" />
+                        <p>{card.calories}</p>
+                    </div>
+                </div>
+                <div className="text-lg font-semibold text-black pt-4">
+                    <button className="bg-green-400 px-4 py-1 rounded-3xl">Want to Cook</button>
                 </div>
             </div>
         </div>
     );
 };
+
+RecipeCard.propTypes ={
+    card: PropTypes.object.isRequired
+}
 
 export default RecipeCard;

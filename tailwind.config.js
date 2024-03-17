@@ -1,4 +1,4 @@
-import daisyui from './node_modules/daisyui'
+import daisyui from './node_modules'
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -8,6 +8,6 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [daisyui],
+  plugins: [require("daisyui")],
 }
 

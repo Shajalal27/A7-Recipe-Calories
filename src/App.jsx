@@ -57,7 +57,7 @@ function App() {
             ))}
         </div>
         <div className='border-2 border-gray-300 rounded-lg p-4'>
-           <h2 className='text-center text-2xl font-semibold border-b-2'>Want to cook: <span>0</span></h2>
+           <h2 className='text-center text-2xl font-semibold border-b-2'>Want to cook: <span>{recipe.length}</span></h2>
             <div className="overflow-x-auto">
               <table className="table">
                 <thead>
@@ -70,7 +70,7 @@ function App() {
                 </thead>
                 <tbody>
                   {recipe.map((item, index) =>(
-                    <tr className="bg-base-200">
+                    <tr className="bg-base-200 ">
                     <th>{index+1}</th>
                     <td>{item.name}</td>
                     <td>{item.preparing_time}</td>

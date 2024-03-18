@@ -8,3 +8,7 @@
 body{
     font-family: "Lexend", sans-serif;
 }
+
+@media screen and (min-width: 1024px) {
+   
+  }

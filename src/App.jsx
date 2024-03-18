@@ -12,6 +12,7 @@ import RecipeCard from './components/RecipeCard/RecipeCard'
 
 
 
+
 function App() {
 
   const[cards, setCards] = useState([])
@@ -68,9 +69,9 @@ function App() {
                   </tr>
                 </thead>
                 <tbody>
-                  {recipe.map((item) =>(
+                  {recipe.map((item, index) =>(
                     <tr className="bg-base-200">
-                    <th>1</th>
+                    <th>{index+1}</th>
                     <td>{item.name}</td>
                     <td>{item.preparing_time}</td>
                     <td>{item.calories}</td>

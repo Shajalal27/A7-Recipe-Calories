@@ -16,7 +16,7 @@ const Header = () => {
         <li><a>Search</a></li>
       </ul>
     </div>
-    <a className="btn btn-ghost lg:text-3xl text-xl font-bold">Recipe Calories</a>
+    <a className="btn btn-ghost lg:text-3xl text-xl font-bold -ml-8">Recipe Calories</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -27,9 +27,9 @@ const Header = () => {
     </ul>
   </div> 
   <div className="navbar-end flex gap-3">
-    <button className='flex gap-3 border-2 bg-slate-200 py-1 px-14 rounded-full'>
-        <img className='-ml-12' src={search} alt="" />
-        <p>Search</p>
+    <button className='flex gap-1 border-2 bg-slate-200 rounded-full   '>
+        <img className='' src={search} alt="" />
+        <input className='bg-transparent outline-none' type="text" placeholder='Search' />
     </button>
     <div className='lg:flex hidden bg-[#0be58a] rounded-full'><img src={profile} alt="" /></div>
   </div>

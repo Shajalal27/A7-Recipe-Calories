@@ -38,7 +38,8 @@ const RecipeCard = ({card, handleRecipe}) => {
 };
 
 RecipeCard.propTypes ={
-    card: PropTypes.object.isRequired
+    card: PropTypes.object.isRequired,
+    handleRecipe: PropTypes.func
 }
 
 

@@ -93,8 +93,10 @@ function App() {
                     <th>Times</th>
                     <th>Calories</th>
                   </tr>
+                
                 </thead>
                 <tbody>
+                  
                   <tr>
                     <td></td>
                     <td></td>

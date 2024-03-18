@@ -34,14 +34,16 @@ function App() {
       }
       else{
         toast('Recipe Cart Already Exists')
-      }
-      
-      
-
-      
+      }    
   }
 
-  console.log(recipe);
+  // console.log(recipe);
+
+  const handlePreparing =(id) =>{
+      const newRecipe = recipe.filter(item => item.id !=id);
+      // console.log(newRecipe);
+      setRecipe(newRecipe);
+  }
 
   return (
     <>
@@ -75,7 +77,7 @@ function App() {
                     <td>{item.name}</td>
                     <td>{item.preparing_time}</td>
                     <td>{item.calories}</td>
-                    <td className='bg-green-400 rounded-full'>Preparing</td>
+                    <td onClick={() =>handlePreparing(item.id)} className='bg-green-400 rounded-full'>Preparing</td>
                   </tr>
                   ))}
                 </tbody>

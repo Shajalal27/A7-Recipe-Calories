@@ -3,7 +3,8 @@ import fire from '../../assets/images/fire.png'
 
 import PropTypes from 'prop-types';
 
-const RecipeCard = ({card}) => {
+const RecipeCard = ({card, handleRecipe}) => {
+    console.log(handleRecipe);
     return (
         <div>
             <div className="border-2 border-gray-200 rounded-lg p-3">
@@ -29,7 +30,7 @@ const RecipeCard = ({card}) => {
                     </div>
                 </div>
                 <div className="text-lg font-semibold text-black pt-4">
-                    <button className="bg-green-400 px-4 py-1 rounded-3xl">Want to Cook</button>
+                    <button onClick={() =>handleRecipe(card)} className="bg-green-400 px-4 py-1 rounded-3xl">Want to Cook</button>
                 </div>
             </div>
         </div>
@@ -39,5 +40,6 @@ const RecipeCard = ({card}) => {
 RecipeCard.propTypes ={
     card: PropTypes.object.isRequired
 }
+
 
 export default RecipeCard;

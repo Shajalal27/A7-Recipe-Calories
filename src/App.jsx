@@ -1,4 +1,5 @@
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { useState } from 'react'
 import './App.css'
@@ -14,6 +15,7 @@ import RecipeCard from './components/RecipeCard/RecipeCard'
 function App() {
 
   const[cards, setCards] = useState([])
+  const[recipe, setRecipe] = useState([])
 
   useEffect(() =>{
     fetch("blogs.json")
@@ -23,18 +25,34 @@ function App() {
     });
   }, []);
 
-  
+  const handleRecipeCard =(c) =>{
+
+      const isExist = recipe.find(item => item.id == c.id);
+      if(!isExist){
+        setRecipe([...recipe, c]);
+      }
+      else{
+        toast('Recipe Cart Already Exists')
+      }
+      
+      
+
+      
+  }
+
+  console.log(recipe);
 
   return (
     <>
      <div className='w-[90%] mx-auto'>
         <Header></Header>
         <Main></Main>
+        <ToastContainer />
      </div>
      <div className='main-container w-[90%] mx-auto gap-8 grid lg:grid-cols-2 grid-cols-1 pb-12'>
         <div className='recipe-container gap-8 grid lg:grid-cols-2 grid-cols-1'>
             {cards.map((pd) => (
-              <RecipeCard key={pd.id} card ={pd}></RecipeCard>
+              <RecipeCard handleRecipe={handleRecipeCard} key={pd.id} card ={pd}></RecipeCard>
             ))}
         </div>
         <div className='border-2 border-gray-300 rounded-lg p-4'>
@@ -50,15 +68,15 @@ function App() {
                   </tr>
                 </thead>
                 <tbody>
-                  
-                  <tr className="bg-base-200">
+                  {recipe.map((item) =>(
+                    <tr className="bg-base-200">
                     <th>1</th>
-                    <td>Cy Ganderton</td>
-                    <td>Quality Control Specialist</td>
-                    <td>Blue</td>
+                    <td>{item.name}</td>
+                    <td>{item.preparing_time}</td>
+                    <td>{item.calories}</td>
                     <td className='bg-green-400 rounded-full'>Preparing</td>
                   </tr>
-                
+                  ))}
                 </tbody>
               </table>
             </div>
@@ -74,14 +92,6 @@ function App() {
                   </tr>
                 </thead>
                 <tbody>
-                  
-                  <tr className="bg-base-200">
-                    <th>1</th>
-                    <td>Cy Ganderton</td>
-                    <td>Quality Control Specialist</td>
-                    <td>Blue</td>
-                  
-                  </tr>
                   <tr>
                     <td></td>
                     <td></td>
@@ -99,5 +109,6 @@ function App() {
     </>
   )
 }
+
 
 export default App;
